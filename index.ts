@@ -4,7 +4,15 @@ export interface EndptsRequest extends Request {
 }
 
 export interface Route {
-  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
+  method:
+    | "ALL"
+    | "GET"
+    | "POST"
+    | "PUT"
+    | "PATCH"
+    | "DELETE"
+    | "HEAD"
+    | "OPTIONS";
   path: string;
   handler(req: EndptsRequest): Promise<Response>;
 }
